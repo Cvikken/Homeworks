@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/* Урок №3. Задание 2. С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.
+Урок №3. Задание 3. Товары в корзине хранятся в массиве. Задачи: а) Организовать такой массив для хранения товаров в корзине; b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+
+*/
+
+let cart = [
+    //наименование предмета, цена, количество
+    ['book', 35 , 1],
+    ['pencil', 15, 1],
+    ['pen', 5, 1],
+];
+function countBasketPrice(array){
+    return array.reduce((countBasketPrice, current) => countBasketPrice + current[1], 0);
+};
+
+console.log(countBasketPrice(cart));
+
+/*Урок №4. Задание 2. 2.Продолжить работу с интернет-магазином:
+2.1. В прошлом домашнем задании вы реализовали корзину на базе массивов. Какими объектами можно заменить их элементы?
+2.2. Реализуйте такие объекты.
+2.3. Перенести функционал подсчета корзины на объектно-ориентированную базу. */
+
+let cart1 = [
+    //наименование предмета, цена, количество
+    {'name':'book', 'price': 35,'qty':1 },
+    {'name':'pencil', 'price': 15,'qty':1 },
+    {'name':'penk', 'price': 10,'qty':1 },
+];
+
+function countBasketPriceObj(array){
+    return array.reduce((countBasketPriceObj, {price}) => countBasketPriceObj + price, 0);
+};
+
+console.log(countBasketPriceObj(cart1));
+
+</script>
+</body>
+</html>
