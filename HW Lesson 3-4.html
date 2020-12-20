@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    console.log('Урок №3. Задание 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.');
+    let i = 0;
+    //проверка на простое число
+    function checkNumber(number){
+        if (number < 2){
+            return false;
+        }
+        for (let i = 2; i < number; i++){
+            if (number % i === 0){
+                return false;
+            }
+        }
+        return true;
+    };
+
+    while(i <= 100){
+        if(checkNumber(i)){
+            console.log(i);
+        }
+        i++;
+    }
+    console.log('Урок №3. Задание 2. С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.')
+
+    //Корзина лежит отдельно вот там cart.html
+
+    console.log('Урок №3. Задание 3. Товары в корзине хранятся в массиве. Задачи: a) Организовать такой массив для хранения товаров в корзине; b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.')
+
+    //Корзина лежит отдельно вот там cart.html
+
+    console.log('Урок №3. Задание 4.*Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла.');
+    for(let i = 0; i <= 9; console.log(i++)) {};
+
+    console.log('Урок№3. Задание 5.  *Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5');
+    let triangle = '';
+        for (let i = 0; i <= 19; i++) {
+            console.log(triangle + 'x');
+            triangle += 'x';
+        };
+
+    console.log('Урок №4. Задание 1. Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999, мы должны получить на выходе объект, в котором в соответствующих свойствах описаны единицы, десятки и сотни. Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}. Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.');
+    function getNumberInfo(number){
+        if (number > 999 || number < 0 || !Number.isInteger(number)) {
+            console.log('Введено неверное число. Введите число от 0 до 999');
+            return {};
+        }
+        const object = {};
+        object.единицы = number % 10;
+        object.десятки = Math.floor(number / 10 % 10);
+        object.сотни = Math.floor(number / 100);
+        return object;
+    }
+    console.log(getNumberInfo(245));
+    console.log(getNumberInfo(0.5));
+    console.log(getNumberInfo(-7));
+    console.log(getNumberInfo(315));
+
+    </script>
+</body>
+</html>
